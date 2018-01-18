@@ -1,0 +1,91 @@
+<!doctype html>
+  <head>
+    <title>Catalog App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+
+    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
+	</script>
+    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+  </head>
+
+  <body>
+  	<!--Continue to define start() in head tag-->
+  	<script>
+    function start() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+          client_id: '251997723405-46at4eis5ac8v5k9nfva03ad22i1rujj.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          scope: 'openid email',
+          cookiepolicy: 'single_host_origin'
+          //redirect-uri="postmessage" is deprecated
+          //approvalprompt="force" is no longer used
+        });
+      });
+    }
+  	</script>
+  	<!--END start() for script in head tag-->
+
+  	<!-- GOOGLE PLUS SIGN IN-->
+  	<div id="googleSignin">
+   		<span class="label">Sign in with:</span>
+    	<div id="signinButton" class="customGPlusSignIn">
+      		<span class="icon"></span>
+      		<span class="buttonText">Google</span>
+    	</div>
+  	</div>
+
+  	<script>
+  		$('#signinButton').click(function() {
+    		// signInCallback defined in step 6.
+    		auth2.grantOfflineAccess().then(signInCallback);
+ 	 	});
+	</script>
+
+
+  	<div id="result"></div>
+
+    <script>
+      function signInCallback(authResult) {
+        if (authResult['code']) {
+          $('#googleSignin').attr('style', 'display: none');
+          $('#result').html('Connecting to Google account...');
+          $.ajax ({
+            type: 'POST',
+            url: '/gconnect?state={{STATE}}',
+            processData: false,
+            data: authResult['code'],
+            // Always include an `X-Requested-With` header in every AJAX request,
+            // to protect against CSRF attacks.
+            headers: {
+            	'X-Requested-With': 'XMLHttpRequest'
+      		  },
+            contentType: 'application/octet-stream; charset=utf-8',
+            success: function(result) {
+              if (result) {
+                $('#result').html('Login Successful!<br>'+result+'<br>Redirecting...');
+                setTimeout(function() {
+                  window.location.href = '/index';
+                }, 4000);
+              }
+              else if (authResult['error']) {
+                console.log('There was an error: '+authResult['error']);
+              } 
+              else {
+                $('#result').html('Failed to make a server-side call. Check your configuration and console.');
+               }
+            }
+          });
+        }
+      }
+  	</script>
+    <!--END GOOGLE PLUS SIGN IN -->
+
+  </body>
+</html>

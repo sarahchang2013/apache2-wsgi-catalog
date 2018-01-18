@@ -1,0 +1,39 @@
+<!doctype html>
+  <head>
+    <title>Catalog App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap-grid.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">    
+  </head>
+
+  <body class="container">
+    <header class="row" id="navbar">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <h1 id="sitename"><a class="site-name" href="{{url_for('homePage')}}">Catalog App</a></h1>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <span class="account">
+          {% if not session.logged_in %}
+          <a class="login-logout" href="{{ url_for('login') }}">log in</a>
+          {% else %}
+          <a class="login-logout" href="{{ url_for('logout') }}">log out</a>
+          {% endif %}
+        </span>
+      </div>
+    </header>
+    <div class="pane">
+      <div class="flash">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+          {% for message in messages %}
+          <li> <strong> {{ message }} </strong> </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+        {% endwith %}
+      </div>
+      {% block body %}{% endblock %}
+    </div>
+  </body>

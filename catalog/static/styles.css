@@ -1,0 +1,110 @@
+
+body {
+	background-color: #eaedf2;
+}
+
+.pane {
+	width: 100%;
+	height: 100%;
+	margin: 1em auto auto auto;
+	background-color: #ffffff;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.site-name, a.login-logout:link, a.site-name, a.login-logout:visited {
+	color: #e1e3e8;
+}
+
+a.site-name, a.login-logout:hover, a.site-name, a.login-logout:active {
+	color: #ffffff;
+}
+
+#navbar {
+	background-color: #170b4c;
+	width: 100%;
+	margin: auto;
+}
+
+#sitename {
+
+	float: left;
+}
+
+.account {
+	margin: 2em 0 auto auto;
+	float: right;
+	background-color: #e5703d;
+	border-radius: 5px;
+	width: 6em;
+	height: 40%;
+	font-size: 1.3em;
+	text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.categories {
+	border-right: 1px solid #edeeef;
+}
+
+.category-title, .items-title {
+	color: #586e91;
+}
+
+span.category-name {
+	color: #838387;
+}
+
+/* There is no short hand format for this*/
+a.category:link, a.category:visited, a.category:hover, a.category:active {
+	color: #f47142;
+}
+
+a.item:link, a.item:visited, a.item:hover, a.item:active {
+	color: #f45642;
+}
+
+#add-item {
+	margin: 1.5em auto 1em auto;
+}
+
+#signinButton {
+	display: inline-block;
+    background: white;
+    color: #444;
+    width: 190px;
+    border-radius: 5px;
+    border: thin solid #888;
+    box-shadow: 1px 1px 1px grey;
+    white-space: nowrap;
+}
+
+#signinButton:hover {
+	cursor: pointer;
+}
+
+span.label {
+    font-family: serif;
+    font-weight: normal;
+}
+    
+span.icon {
+    background: url('https://developers.google.com/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+}
+    
+span.buttonText {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 42px;
+    padding-right: 42px;
+    font-size: 14px;
+    font-weight: bold;
+    /* Use the Roboto font that is loaded in the <head> */
+    font-family: 'Roboto', sans-serif;
+}
