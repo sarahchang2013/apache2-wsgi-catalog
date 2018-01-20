@@ -43,6 +43,22 @@ URL: http://www.cspectra.com
 
 12. In google developer console, use the URL of the domain name as Javascript and redirect origin, since google oauth doesn't accept IP addresses. 
 
+## Third-party resources
+
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vp
+
+https://sg.godaddy.com/help/changing-the-ssh-port-for-your-linux-server-7306
+
+https://www.ssh.com/ssh/putty/windows/puttygen
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html
+
+https://help.ubuntu.com/community/UbuntuTime
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
+
+https://www.postgresql.org/docs/8.1/static/manage-ag-createdb.html
+
 
 ## Authors
 
