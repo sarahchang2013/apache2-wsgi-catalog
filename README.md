@@ -29,15 +29,15 @@ URL: http://www.cspectra.com
 
 9.  Change Apache .conf file:
 
-sudo vi  /etc/apache2/sites-enabled/000-default.conf
+    sudo vi  /etc/apache2/sites-enabled/000-default.conf
 
-Add this line before the closing tag: 
+    Add this line before the closing tag: 
 
-WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+    WSGIScriptAlias / /var/www/catalog/catalog.wsgi
 
 10. Run python __init__.py in the catalog folder, install any missing package.
 
-sudo -H pip install foo
+    sudo -H pip install foo
 
 11. In AWS console, give a static IP to the instance, and point the domain name to the IP.
 
