@@ -244,6 +244,14 @@ def addItem():
         title = request.form['title']
         description = request.form['description']
         category_id = request.form['category']
+        # Check if any of these is empty
+        if !(len(title) && len(description) && len(category_id)):
+            output = '<script>function myFunction()'
+            output += '{alert("'
+            output += 'Please provide title, description, and category.");'
+            output += ' window.location="/index";}</script>'
+            output += '<body onload="myFunction()">'
+            return output
         # Check if an item with the same title and category already exists
         existing_items = dbsession.query(Item).filter(and_(
                                   Item.title == title,
@@ -288,6 +296,14 @@ def editItem(category_name, item_title):
         title = request.form['title']
         description = request.form['description']
         category_id = request.form['category']
+        # Check if any of these is empty
+        if !(len(title) && len(description) && len(category_id)):
+            output = '<script>function myFunction()'
+            output += '{alert("'
+            output += 'Please provide title, description, and category.");'
+            output += ' window.location="/index";}</script>'
+            output += '<body onload="myFunction()">'
+            return output
         # Check if an item with the same title and category already exists
         existing_items = dbsession.query(Item).filter(and_(
                              Item.title == title,
