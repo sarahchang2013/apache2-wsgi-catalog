@@ -245,7 +245,7 @@ def addItem():
         description = request.form['description']
         category_id = request.form['category']
         # Check if any of these is empty
-        if !(len(title) and len(description) and len(category_id)):
+        if not (len(title) and len(description) and len(category_id)):
             output = '<script>function myFunction()'
             output += '{alert("'
             output += 'Please provide title, description, and category.");'
@@ -297,7 +297,7 @@ def editItem(category_name, item_title):
         description = request.form['description']
         category_id = request.form['category']
         # Check if any of these is empty
-        if !(len(title) and len(description) and len(category_id)):
+        if not (len(title) and len(description) and len(category_id)):
             output = '<script>function myFunction()'
             output += '{alert("'
             output += 'Please provide title, description, and category.");'
