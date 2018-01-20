@@ -38,10 +38,56 @@ URL: http://www.cspectra.com
 10. Run python __init__.py in the catalog folder, install any missing package.
 
     sudo -H pip install foo
+11. Installed Python packages:
 
-11. In AWS console, give a static IP to the instance, and point the domain name to the IP.
+    certifi (2018.1.18)
+    
+    chardet (3.0.4)
+    
+    click (6.7)
+    
+    Flask (0.12.2)
+    
+    httplib2 (0.10.3)
+    
+    idna (2.6)
+    
+    itsdangerous (0.24)
+    
+    Jinja2 (2.10)
+    
+    MarkupSafe (1.0)
+    
+    oauth2client (4.1.2)
+    
+    pip (9.0.1)
+    
+    psycopg2 (2.6.1)
+    
+    pyasn1 (0.4.2)
+    
+    pyasn1-modules (0.2.1)
+    
+    requests (2.18.4)
+    
+    rsa (3.4.2)
+    
+    setuptools (20.7.0)
+    
+    six (1.11.0)
+    
+    SQLAlchemy (1.2.1)
+    
+    urllib3 (1.22)
+    
+    Werkzeug (0.14.1)
+    
+    wheel (0.29.0)
 
-12. In google developer console, use the URL of the domain name as Javascript and redirect origin, since google oauth doesn't accept IP addresses. 
+
+12. In AMI console, give a static IP to the instance, and point the domain name to the IP.
+
+13. In google developer console, use the URL of the domain name as Javascript and redirect origin, since google oauth doesn't accept IP addresses. 
 
 ## Third-party resources
 
