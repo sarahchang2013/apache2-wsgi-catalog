@@ -7,6 +7,12 @@ IP address: 13.250.151.187;
 SSH port: 2200;
 URL: http://www.cspectra.com
 
+## Configurations
+
+1. Disable remote root login.
+
+2. Change the SSH port from 22 to 2200.
+
 ## Authors
 
 This project is the course work done by Shangyan Zhang.
