@@ -1,7 +1,7 @@
 # apache2-wsgi-catalog
 Udacity project to host the catalog app on amazon lightsail with apache2 and wsgi.
 
-## How to access
+## Access
 
 IP address: 13.250.151.187;
 SSH port: 2200;
