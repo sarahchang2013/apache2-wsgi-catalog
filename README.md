@@ -38,7 +38,20 @@ URL: http://www.cspectra.com
 10. Run python __init__.py in the catalog folder, install any missing package.
 
     sudo -H pip install foo
-11. Installed Python packages:
+    
+11. In AMI console, give a static IP to the instance, and point the domain name to the IP.
+
+12. In google developer console, use the URL of the domain name as Javascript and redirect origin, since google oauth doesn't accept IP addresses.
+
+## Installed Softwares:
+
+    apache2
+    
+    libapache2-mod-wsgi
+    
+    python-pip
+    
+    postgresql
 
     certifi (2018.1.18)
     
@@ -83,11 +96,6 @@ URL: http://www.cspectra.com
     Werkzeug (0.14.1)
     
     wheel (0.29.0)
-
-
-12. In AMI console, give a static IP to the instance, and point the domain name to the IP.
-
-13. In google developer console, use the URL of the domain name as Javascript and redirect origin, since google oauth doesn't accept IP addresses. 
 
 ## Third-party resources
 
